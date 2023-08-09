@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+select,
+textarea,
+input {
+  @apply outline-primary;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.gradientBlue {
+  background: linear-gradient(182deg, #e4e4ff, #e4ecff);
+}
+
+.tipBlue {
+  background: rgba(198, 209, 252, 0.61);
+  font-size: smaller;
+}
+
+.tipYellow {
+  background: rgba(252, 250, 198, 0.61);
+  font-size: smaller;
+}
+
+.tipNormal {
+  font-size: smaller;
+}
+
+.tipWhite {
+  background: white;
+  font-size: smaller;
+}
+
+.deliveryBox {
+  height: 100%;
+  width: 100%;
+  border: 1px dotted #979797;
+  background-color: #eeeeee;
+}
+
+.imgFill {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.deliveryBox:hover {
+  border-color: purple;
+  border-style: solid;
+  background-color: white;
+}
+
+button:disabled,
+button[disabled]{
+  opacity: 0.7;
+  cursor: not-allowed;
+}
