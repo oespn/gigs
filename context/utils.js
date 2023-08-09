@@ -1,25 +1,20 @@
 //import { connect, Contract, keyStores, WalletConnection, utils  } from 'xrpl'
+//import * from xrpl
 
 
 
 export async function initXRPL() {
-    const config = {
-        networkId: "testnet",
-        keyStore: new keyStores.BrowserLocalStorageKeyStore(),
-        nodeUrl: "https://rpc.testnet.xrpl.org",
-        walletUrl: "https://wallet.testnet.xrpl.org",
-        helperUrl: "https://helper.testnet.xrpl.org",
-        explorerUrl: "https://testnet.xrpl.org",
-    };
     
-    const xrpl = await connect(config);
-    const wallet = new WalletConnection(near);
+    const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233")
+    await client.connect()
 
-    if(!wallet.isSignedIn()) {
-        await wallet.requestSignIn(abi.escrow.contractAddr, "gig");
-    }
+    const wallet = null; //new WalletConnection(near);
 
-    return { xrpl: xrpl, wallet: wallet }
+    // if(!wallet.isSignedIn()) {
+    //     await wallet.requestSignIn(abi.escrow.contractAddr, "gig");
+    // }
+
+    return { xrpl: client, wallet: wallet }
 }
 
 export async function signout(wallet) {

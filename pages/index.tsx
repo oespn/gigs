@@ -8,7 +8,7 @@ import Logo from '../components/ui/Logo'
 import { useAppContext } from '../context/state'
 import { initXRPL } from '../context/utils'
 
-//import { connect, Contract, keyStores, Near, WalletConnection } from 'xrpl'
+//import { connect, Contract, Near, WalletConnection } from 'xrpl'
 
 export default function Home() {
   const sessionState = useAppContext();
